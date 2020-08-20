@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page Activated="true" eq2usescomwndcontrols="true" Location="290,260" MinimumSize="2,2" Name="ContentDesignBar" PackSize="absolute,fixed" ScrollExtent="420,286" Size="420,286" UserMovable="true" UserResizable="true" version="1.0.0">
+    <Page Location="14,196" Name="SpawnScripts" ScrollExtent="156,80" Size="156,80">
+        <Text Font="/TextStyles.VeryLarge.VeryLargeStyle" Location="-2,4" Name="SpawnScripts" PackSize="absolute,absolute" ScrollExtent="128,30" Size="128,30" TextAlignment="Center">SpawnScripts</Text>
+        <DataSource Name="SpawnScriptData">
+            <Data Name="&apos;SpawnScripts/Generic/random_pattern_small.lua&apos;" Text="pattern small" />
+            <Data Name="&apos;SpawnScripts/Generic/movement_circle_small.lua&apos;" Text="circle small" />
+            <Data Name="&apos;SpawnScripts/Generic/hailed_facetarget.lua&apos;" Text="facetarget" />
+            <Data Name="&apos;SpawnScripts/Generic/generic_fish_movement.lua&apos;" Text="fish" />
+        </DataSource>
+        <DataSource Name="ScriptType">
+            <Data Name="spawn_script" Text="id" />
+            <Data Name="spawnentry_script" Text="entry" />
+            <Data Name="spawnlocation_script" Text="loc" />
+        </DataSource>
+        <Button Location="120,4" Name="SetScript" OnPress="spawn set Parent.TypeList.SelectedItem.Name Parent.ScriptList.SelectedItem.Name" PackSize="absolute,absolute" ScrollExtent="40,30" Size="40,30" Style="/CommonElements.PushButton.data.style">Set</Button>
+        <Dropdownbox DataSource="SpawnScriptData" Location="56,40" Name="ScriptList" PackSize="absolute,absolute" RowTemplate="/CommonElements.Dropdown.data.dropdown_template" ScrollExtent="106,32" Size="106,32" Style="/CommonElements.Dropdown.data.style" />
+        <Dropdownbox DataSource="ScriptType" Location="-4,40" Name="TypeList" PackSize="absolute,absolute" RowTemplate="/CommonElements.Dropdown.data.dropdown_template" ScrollExtent="70,32" SelectedItemIndex="1" Size="70,32" Style="/CommonElements.Dropdown.data.style" />
+    </Page>
+    <Page Location="15,115" Name="Offsets" ScrollExtent="130,70" Size="130,70">
+        <Text Font="/TextStyles.NormalOutline.NormalOutlineStyle" Location="20,20" Name="X" PackSize="absolute,absolute" ScrollExtent="20,24" Size="20,24" TextAlignment="Center" TextAlignmentVertical="Center">X</Text>
+        <Text Font="/TextStyles.NormalOutline.NormalOutlineStyle" Location="60,20" Name="Y" PackSize="absolute,absolute" ScrollExtent="20,24" Size="20,24" TextAlignment="Center" TextAlignmentVertical="Center">Y</Text>
+        <Text Font="/TextStyles.NormalOutline.NormalOutlineStyle" Location="100,20" Name="Z" PackSize="absolute,absolute" ScrollExtent="20,24" Size="20,24" TextAlignment="Center" TextAlignmentVertical="Center">Z</Text>
+        <Text Font="/TextStyles.VeryLarge.VeryLargeStyle" Location="20,-10" Name="label" PackSize="absolute,absolute" ScrollExtent="70,50" Size="70,50" TextAlignmentVertical="Center">Offsets</Text>
+        <Textbox BackgroundColor="#FFFFFF" BackgroundOpacity="1.000" Cursor="/Cursor.Text" Location="10,40" MaximumSize="16384,34" MinimumSize="40,34" Name="TextboxX" PackSize="absolute,absolute" RStyleActivated="/CommonElements.LargeTextfield.data.selected.rect" RStyleDefault="/CommonElements.LargeTextfield.data.default.rect" RStyleDisabled="/CommonElements.LargeTextfield.data.disabled.rect" RStyleDisabledActivated="/CommonElements.LargeTextfield.data.disabled.rect" RStyleMouseOver="/CommonElements.LargeTextfield.data.mouseover.rect" RStyleMouseOverActivated="/CommonElements.LargeTextfield.data.selected.rect" RStyleMouseOverSelected="/CommonElements.LargeTextfield.data.selected.rect" RStyleSelected="/CommonElements.LargeTextfield.data.selected.rect" ScrollExtent="40,34" Size="40,34" Style="/CommonElements.LargeTextfield.data.style">0</Textbox>
+        <Textbox BackgroundColor="#FFFFFF" BackgroundOpacity="1.000" Cursor="/Cursor.Text" Location="50,40" MaximumSize="16384,34" MinimumSize="40,34" Name="TextboxY" PackSize="absolute,absolute" RStyleActivated="/CommonElements.LargeTextfield.data.selected.rect" RStyleDefault="/CommonElements.LargeTextfield.data.default.rect" RStyleDisabled="/CommonElements.LargeTextfield.data.disabled.rect" RStyleDisabledActivated="/CommonElements.LargeTextfield.data.disabled.rect" RStyleMouseOver="/CommonElements.LargeTextfield.data.mouseover.rect" RStyleMouseOverActivated="/CommonElements.LargeTextfield.data.selected.rect" RStyleMouseOverSelected="/CommonElements.LargeTextfield.data.selected.rect" RStyleSelected="/CommonElements.LargeTextfield.data.selected.rect" ScrollExtent="40,34" Size="40,34" Style="/CommonElements.LargeTextfield.data.style">0</Textbox>
+        <Textbox BackgroundColor="#FFFFFF" BackgroundOpacity="1.000" Cursor="/Cursor.Text" Location="90,40" MaximumSize="16384,34" MinimumSize="40,34" Name="TextboxZ" PackSize="absolute,absolute" RStyleActivated="/CommonElements.LargeTextfield.data.selected.rect" RStyleDefault="/CommonElements.LargeTextfield.data.default.rect" RStyleDisabled="/CommonElements.LargeTextfield.data.disabled.rect" RStyleDisabledActivated="/CommonElements.LargeTextfield.data.disabled.rect" RStyleMouseOver="/CommonElements.LargeTextfield.data.mouseover.rect" RStyleMouseOverActivated="/CommonElements.LargeTextfield.data.selected.rect" RStyleMouseOverSelected="/CommonElements.LargeTextfield.data.selected.rect" RStyleSelected="/CommonElements.LargeTextfield.data.selected.rect" ScrollExtent="40,34" Size="40,34" Style="/CommonElements.LargeTextfield.data.style">0</Textbox>
+        <Button Location="90,0" Name="SetOffsets" OnPress="spawn set X_Offset Parent.TextBoxX.text &#xD;&#xA;&#x9;&#x9;spawn set Y_Offset Parent.TextBoxY.text &#xD;&#xA;&#x9;&#x9;spawn set Z_Offset Parent.TextBoxZ.text" PackSize="absolute,absolute" ScrollExtent="40,30" Size="40,30" Style="/CommonElements.PushButton.data.style">Set</Button>
+    </Page>
+    <Page Location="280,116" Name="Show Level" ScrollExtent="140,70" Size="140,70">
+        <Button Location="0,40" Name="LevelShow" OnPress="spawn set show_level 1" PackSize="absolute,absolute" ScrollExtent="64,32" Size="64,32" Style="/CommonElements.PushButton.data.style">Show</Button>
+        <Button Location="60,40" Name="LevelHide" OnPress="spawn set show_level 0" PackSize="absolute,absolute" ScrollExtent="64,32" Size="64,32" Style="/CommonElements.PushButton.data.style">Hide</Button>
+        <Text Font="/TextStyles.VeryLarge.VeryLargeStyle" Location="8,-8" Name="label" PackSize="absolute,absolute" ScrollExtent="110,60" Size="110,60" TextAlignment="Center" TextAlignmentVertical="Center">Show Level</Text>
+    </Page>
+    <Page Location="280,30" Name="CommandIcon" ScrollExtent="140,70" Size="140,70">
+        <Button Location="0,40" Name="IconOn" OnPress="spawn set show_command_icon 1" PackSize="absolute,absolute" ScrollExtent="70,32" Size="70,32" Style="/CommonElements.PushButton.data.style">On</Button>
+        <Button Location="60,40" Name="IconOff" OnPress="spawn set show_command_icon 0" PackSize="absolute,absolute" ScrollExtent="70,32" Size="70,32" Style="/CommonElements.PushButton.data.style">Off</Button>
+        <Text Alignment="Center" Font="/TextStyles.VeryLarge.VeryLargeStyle" Location="0,-10" Name="label" PackSize="absolute,absolute" ScrollExtent="128,64" Size="128,64" TextAlignment="Center" TextAlignmentVertical="Center">Command Icon</Text>
+    </Page>
+    <Page Location="150,116" Name="EntitySecondary" ScrollExtent="140,70" Size="140,70">
+        <Text Font="/TextStyles.VeryLarge.VeryLargeStyle" GetsInput="false" Location="5,-10" MaxLines="2" Name="Label" PackSize="absolute,absolute" ScrollExtent="115,60" Size="115,60" TextAlignment="Center" TextAlignmentVertical="Center" UserScrollable="false">Secondary Entity</Text>
+        <DataSource Name="EntityData">
+            <Data Name="1262" Text="Guard Preset" />
+            <Data Name="1265" Text="Merchant Preset" />
+            <Data Name="1267" Text="Banker Preset" />
+            <Data Name="9" Text="hail" />
+            <Data Name="35" Text="assist" />
+            <Data Name="12" Text="repair" />
+        </DataSource>
+        <Button Location="90,40" Name="SetSecondary" OnPress="spawn set command_secondary Parent.SecondaryList.SelectedItem.Name" PackSize="absolute,absolute" ScrollExtent="40,32" Size="40,32" Style="/CommonElements.PushButton.data.style">Set</Button>
+        <Dropdownbox DataSource="EntityData" Location="0,40" Name="SecondaryList" PackSize="absolute,absolute" RowTemplate="/CommonElements.Dropdown.data.dropdown_template" ScrollExtent="100,32" Size="100,32" Style="/CommonElements.Dropdown.data.style" />
+    </Page>
+    <Page Location="150,30" Name="EntityPrimary" ScrollExtent="138,70" Size="138,70">
+        <DataSource Name="EntityData">
+            <Data Name="13" Text="Find NPC" />
+            <Data Name="4" Text="Buy from Merchant" />
+            <Data Name="14" Text="Bank" />
+            <Data Name="9" Text="hail" />
+            <Data Name="1266" Text="Sell Merchant" />
+            <Data Name="35" Text="assist" />
+            <Data Name="12" Text="repair" />
+        </DataSource>
+        <Button Location="90,40" Name="SetPrimary" OnPress="spawn set command_primary Parent.PrimaryList.SelectedItem.Name" PackSize="absolute,absolute" ScrollExtent="38,32" Size="38,32" Style="/CommonElements.PushButton.data.style">Set</Button>
+        <Dropdownbox DataSource="EntityData" Location="0,40" Name="PrimaryList" PackSize="absolute,absolute" RowTemplate="/CommonElements.Dropdown.data.dropdown_template" ScrollExtent="98,32" Size="98,32" Style="/CommonElements.Dropdown.data.style" />
+        <Text Font="/TextStyles.VeryLarge.VeryLargeStyle" GetsInput="false" Location="0,-10" MaxLines="2" Name="Label" PackSize="absolute,absolute" ScrollExtent="128,60" Size="128,60" TextAlignment="Center" TextAlignmentVertical="Center" UserScrollable="false">Primary Entity</Text>
+    </Page>
+    <Page AbsorbsInput="false" BackgroundColor="#00FF00" Location="10,30" Name="Name" PackSize="fixed,fixed" ScrollExtent="140,80" Size="140,80">
+        <Text Font="/TextStyles.VeryLarge.VeryLargeStyle" Location="10,0" Name="Name" PackLocation="left" PackSize="absolute,absolute" ScrollExtent="120,40" Size="120,40" TextAlignentvertical="Center" TextAlignment="Center" TextAlignmentVertical="Center">Show Name</Text>
+        <Button Location="-4,40" Name="NameOn" OnPress="spawn set show_name 1" PackSize="absolute,absolute" ScrollExtent="79,32" Size="79,32" Style="/CommonElements.PushButton.data.style">Show</Button>
+        <Button Location="65,40" Name="NameOff" OnPress="spawn set show_name 0" PackSize="absolute,absolute" ScrollExtent="79,32" Size="79,32" Style="/CommonElements.PushButton.data.style">Hide</Button>
+    </Page>
+    <Page AbsorbsInput="false" Location="-10,0" Name="WindowFrame" PackSize="a,a" RStyleDefault="/WindowElements.WindowFrame.rect" ScrollExtent="438,296" Size="438,296">
+        <Page BackgroundOpacity="1.000" Name="LeftGrouper" RStyleDefault="/WindowElements.WindowFrame.data.left_grouper.rect" ScrollExtent="240,70" Size="240,70" UserMovable="true">
+            <Text Alignment="Center" Font="/TextStyles.Large.LargeStyle" Location="20,0" Name="BarName" ScrollExtent="132,30" Size="132,30" TextAlignment="Center" TextAlignmentVertical="Center" TextColor="#F0CC02">Content Design</Text>
+        </Page>
+        <Button Location="385,8" Name="Settings" PackLocation="right,top" ScrollExtent="18,18" Size="18,18" Style="/WindowElements.WindowFrame.data.settings.style" Tooltip=":47472f27ec278586:Window Settings" UserMovable="true" />
+        <Button Location="385,8" Name="Help" PackLocation="right,top" ScrollExtent="18,18" Size="18,18" Style="/WindowElements.WindowFrame.data.help.style" Tooltip=":47472f27574a0c6d:Help" UserMovable="true" Visible="false" />
+        <Button Location="402,8" Name="Close" PackLocation="right,top" ScrollExtent="18,18" Size="18,18" Style="/WindowElements.WindowFrame.data.close.style" Tooltip=":47472f272d3f513f:Close" UserMovable="true" />
+        <Page AbsorbsInput="false" BackgroundOpacity="1.000" Name="Frame" PackLocation="left,top" PackSize="absolute,absolute" RStyleDefault="/WindowElements.WindowFrame.data.frame.rect" ScrollExtent="430,296" Size="430,296" />
+        <Page AbsorbsInput="false" BackgroundOpacity="1.000" Name="Bkg" PackLocation="left,top" PackSize="absolute,absolute" RStyleDefault="/WindowElements.WindowFrame.data.bkg.rect" ScrollExtent="433,296" Size="433,296" />
+    </Page>
+</Page>
